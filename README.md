@@ -63,8 +63,8 @@ Perfect for learning backend development step-by-step in **Java** (JDK 25 recomm
 ## How to Run / Develop
 
 1. **Prerequisites**
-    - JDK 17 or 21
-    - IntelliJ IDEA (Community or Ultimate)
+    - JDK 25
+    - IntelliJ IDEA (Ultimate)
     - Maven (usually bundled in IntelliJ)
 
 2. **Get Started**
@@ -72,3 +72,50 @@ Perfect for learning backend development step-by-step in **Java** (JDK 25 recomm
    git clone https://github.com/haruna-usman-bello/java-roadmap-projects.git
    cd java-roadmap-projects
    # Open the folder in IntelliJ → it auto-detects as Maven project
+3. **In IntelliJ**
+   - Right-click root pom.xml → Maven → Reload Project
+   - To run a CLI module: right-click Main.java → Run (add program args if needed)
+   - To run a Spring Boot API: right-click the @SpringBootApplication class → Run
+
+4. **Add a new module (example)**
+   - Right-click root → New → Module → Maven → ArtifactId = new-project-name
+   - Update root pom.xml<modules> section
+   - Maven → Reload Project
+
+## Folder Structure
+
+   ```bash
+      java-roadmap-projects/
+   ├── pom.xml                 # Root aggregator POM
+   ├── .gitignore
+   ├── README.md
+   │
+   ├── task-tracker-cli/
+   │   ├── pom.xml
+   │   ├── src/main/java/...
+   │   └── tasks.json         (runtime file – gitignored)
+   │
+   ├── todo-list-api/
+   │   ├── pom.xml
+   │   ├── src/main/java/...  (Spring Boot app)
+   │   └── application.yml
+   │
+   └── ... (one folder per project)
+```
+
+## Contributing
+**Contributions welcome!**
+   - Pick an uncompleted project
+   - Create a branch: git checkout -b feature/expense-tracker-api 
+   - Implement following the official project requirements 
+   - Open a PR with clear description
+
+## License
+MIT License – feel free to use, fork, learn, and share.
+
+[![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)](https://maven.apache.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YOUR_USERNAME/java-roadmap-projects)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Java Version](https://img.shields.io/badge/Java-17%20%7C%2021-blue?style=for-the-badge)](https://www.oracle.com/java/)
