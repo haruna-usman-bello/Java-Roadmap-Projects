@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TaskManager {
@@ -59,15 +60,9 @@ public class TaskManager {
         }
     }
 
-    public void listTasks(){
-        StringBuilder sb = new StringBuilder();
-
-        for(Task task : tasks){
-            sb.append(task.toJsonString());
-            sb.append("\n");
-        }
-        String jsonString = sb.toString();
-        System.out.println(jsonString);
+    public void addTask(String description) {
+        Task task = new Task(description);
+        tasks.add(task);
+        System.out.println("Task added successfully (ID: " + task.getId() + ")");
     }
-
 }
