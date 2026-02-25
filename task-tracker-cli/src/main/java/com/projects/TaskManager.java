@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class TaskManager {
     private final Path filePath = Path.of("./task-tracker-cli/src/main/resources/tasks.json");
@@ -65,4 +66,16 @@ public class TaskManager {
         tasks.add(task);
         System.out.println("Task added successfully (ID: " + task.getId() + ")");
     }
+
+    public void deleteTask(String id) {
+        Task task = findTaskById(id).orElseThrow(() -> new RuntimeException("Task with id " + id + " not found"));
+        tasks.remove(task);
+        System.out.println("Task deleted successfully (ID: " + id + ")");
+
+    }
+
+    public Optional<Task> findTaskById(String id) {
+       return  tasks.stream().filter(task -> task.getId() == Integer.parseInt(id)).findFirst();
+    }
+
 }

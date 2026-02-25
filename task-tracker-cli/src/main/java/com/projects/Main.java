@@ -28,7 +28,13 @@ public class Main {
                     System.out.println("Usage: task-cli <command> <task-id>");
                     return;
                 }
-                System.out.println("Deleting task: " + args[1]);
+                try {
+                taskManager.deleteTask(args[1]);
+                }
+                catch(Exception e) {
+                    System.out.println(e.getMessage());
+                }
+
                 break;
             case "list":
                 System.out.println("Listing tasks");
