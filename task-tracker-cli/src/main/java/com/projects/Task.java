@@ -51,6 +51,10 @@ public class Task {
 
     }
 
+    public void updateDescription(String newDescription) {
+        this.description = newDescription;
+    }
+
     public int getId() {
         return id;
     }

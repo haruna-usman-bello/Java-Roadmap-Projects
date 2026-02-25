@@ -67,12 +67,20 @@ public class TaskManager {
         System.out.println("Task added successfully (ID: " + task.getId() + ")");
     }
 
+    public void updateTask(String id, String description) {
+        Task task = findTaskById(id).orElseThrow(() -> new RuntimeException("No task found with id: " + id));
+        task.updateDescription(description);
+        System.out.println("Task updated successfully (ID: " + task.getId() + ")");
+    }
+
     public void deleteTask(String id) {
         Task task = findTaskById(id).orElseThrow(() -> new RuntimeException("Task with id " + id + " not found"));
         tasks.remove(task);
         System.out.println("Task deleted successfully (ID: " + id + ")");
 
     }
+
+
 
     public Optional<Task> findTaskById(String id) {
        return  tasks.stream().filter(task -> task.getId() == Integer.parseInt(id)).findFirst();

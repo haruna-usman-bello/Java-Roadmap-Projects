@@ -36,6 +36,17 @@ public class Main {
                 }
 
                 break;
+            case "update":
+                if(args.length < 2) {
+                    System.out.println("Usage: task-cli <command> <task-id> <task-description>");
+                }
+                try {
+                taskManager.updateTask(args[1], args[2]);
+                }
+                catch(Exception e) {
+                    System.out.println(e.getMessage());
+                }
+                break;
             case "list":
                 System.out.println("Listing tasks");
                 break;
